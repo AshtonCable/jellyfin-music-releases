@@ -1,8 +1,9 @@
 # Changelog
 
-## 1.0.0 — 2026-09-08
+## 1.0.0 (alpha) — 2026-09-08
 
-First release.
+First public pre-release. Alpha quality: unfinished, under active development,
+some features may not work as expected yet.
 
 - Splash screen and first-run tour, sign-in with Quick Connect
 - Library, Albums, Artists, Songs, Playlists, Genres, Downloads, search

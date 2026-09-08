@@ -5,6 +5,12 @@
 A Cupertino-style music player for your own [Jellyfin](https://jellyfin.org) server, for
 Android, macOS and the web. Made by [Ashton Cable](https://ashtoncable.ca).
 
+> [!WARNING]
+> **Pre-release alpha software.** Jellyfin Music is unfinished and under continued
+> development. Expect rough edges: some features may not work as expected yet, things
+> will change between releases, and you may need to sign in again after updating.
+> Please report anything broken on the [issues](../../issues) page.
+
 This repository only holds **downloadable builds**. Grab the latest version from the
 [Releases](../../releases/latest) page.
 
