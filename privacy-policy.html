@@ -82,20 +82,20 @@
     <li><strong>Server connection details</strong> – the address of your Jellyfin server, your username, and the session token your server issues when you sign in, so you stay signed in. Your password is used once to sign in and is not stored.</li>
     <li><strong>A device identifier</strong> – a random string the app generates the first time it runs. Jellyfin requires clients to identify themselves with a device ID; it is not derived from your hardware and is never sent anywhere but your own server.</li>
     <li><strong>Preferences</strong> – appearance, playback and download settings, and whether you have seen the welcome tour.</li>
-    <li><strong>Downloads</strong> – music files and cover images you choose to download for offline listening.</li>
+    <li><strong>Downloads</strong> – music files and cover images you choose to download for offline listening (Android and macOS apps; the web version streams only). On Android you can choose to keep downloads on a removable SD card or USB drive (Settings → Storage); they stay in the app's own folder on that storage, remain on your device, and are removed with the app like any other download.</li>
   </ul>
-  <p>On Android, iOS and macOS this data lives in the app's private storage. On the web it lives in your browser's local storage for the site that hosts the app. Signing out removes the session token; deleting a download removes its files; uninstalling the app (or clearing site data in the browser) removes everything.</p>
+  <p>On Android, iOS and macOS this data lives in the app's private storage. On the web it lives in your browser's local storage for the site that hosts the app. In the web version, when a title uses characters that the built-in fonts do not cover, the browser fetches a fallback font from Google Fonts (fonts.gstatic.com); that request carries no account or library data beyond your IP address. Signing out removes the session token; deleting a download removes its files; uninstalling the app (or clearing site data in the browser) removes everything.</p>
 
   <h2>What the app sends to your Jellyfin server</h2>
   <p>Jellyfin Music talks only to the server address you enter. Like any Jellyfin client it sends your sign-in details, requests for your library, search terms, the tracks you play and how far you have listened (Jellyfin's playback reporting, which powers "resume" and play counts on your server), download requests, and, if you use the Play On feature, remote-control commands for other Jellyfin devices on your account.</p>
   <p>This traffic goes directly between your device and your server; the developer never sees it. Whoever operates the server controls that data. If the server is not your own, refer to its operator's privacy practices.</p>
 
   <h2>Optional third-party service: lyrics</h2>
-  <p>When your server has no lyrics for a song and <strong>Online Lyrics</strong> is switched on (it is on by default), the app asks <a href="https://lrclib.net">LRCLIB</a>, a free community lyrics database, for lyrics. Only the song's title, artist, album name and length are sent — no account details, identifiers or listening history. As with any internet request, LRCLIB's servers can see your IP address. You can turn this off at any time in <strong>Settings → Playback → Online Lyrics</strong>, after which the app makes no requests to anyone other than your Jellyfin server.</p>
+  <p>When your server has no lyrics for a song and <strong>Online Lyrics</strong> is switched on (it is on by default), the app asks <a href="https://lrclib.net">LRCLIB</a>, a free community lyrics database, for lyrics. Only the song's title, artist, album name and length are sent — no account details, identifiers or listening history. As with any internet request, LRCLIB's servers can see your IP address. You can turn this off at any time in <strong>Settings → Playback → Online Lyrics</strong>, after which the app makes no requests to anyone other than your Jellyfin server (in the web version, the fallback-font request described above is the only exception).</p>
   <p>The built-in <strong>demo library</strong> (reached by entering <code>demo</code> as the server) loads sample cover images from the placeholder image service picsum.photos. No personal data is sent with those requests.</p>
 
   <h2>Permissions</h2>
-  <p>The app asks only for what playback needs: network access (to reach your server), the ability to keep playing in the background with a media notification / lock-screen controls, and permission to keep the device awake while playing. It does not request access to your location, contacts, camera, microphone, photos or files outside its own storage.</p>
+  <p>The app asks only for what playback needs: network access (to reach your server), the ability to keep playing in the background with a media notification / lock-screen controls, and permission to keep the device awake while playing. It does not request access to your location, contacts, camera, microphone, photos or files outside its own storage. On iOS, the system may also ask for permission to find and connect to devices on your local network the first time the app reaches a server on your home network; that permission is used only to talk to the Jellyfin server you entered.</p>
 
   <h2>Children</h2>
   <p>Jellyfin Music is not directed at children under 13 and, as described above, does not collect personal information from anyone.</p>
@@ -116,6 +116,7 @@
   <section class="store">
     <h3>Notes for app-store forms</h3>
     <ul>
+      <li><strong>Developer contact for store listings:</strong> Ashton Cable · <a href="mailto:ashton@ashtoncable.ca">ashton@ashtoncable.ca</a> · <a href="https://ashtoncable.ca">ashtoncable.ca</a> · privacy policy URL <a href="https://ashtoncable.github.io/jellyfin-music-releases/privacy-policy.html">ashtoncable.github.io/jellyfin-music-releases/privacy-policy.html</a></li>
       <li><strong>Google Play Data safety:</strong> the developer collects no user data and shares no user data. Sign-in credentials and the session token are stored on-device only and are sent solely to the user's own server. The optional lyrics lookup sends non-personal song metadata (title, artist, album, duration) to LRCLIB and can be disabled by the user.</li>
       <li><strong>Apple App Privacy:</strong> "Data Not Collected". The app contains no third-party analytics or advertising SDKs and does not track users.</li>
       <li>This document describes the app's behaviour as built; it is not legal advice.</li>

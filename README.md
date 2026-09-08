@@ -3,7 +3,8 @@
 # Jellyfin Music
 
 A Cupertino-style music player for your own [Jellyfin](https://jellyfin.org) server, for
-Android, macOS and the web. Made by [Ashton Cable](https://ashtoncable.ca).
+Android, macOS, iPhone and iPad (as a web app) and the web. Made by
+[Ashton Cable](https://ashtoncable.ca).
 
 > [!WARNING]
 > **Pre-release alpha software.** Jellyfin Music is unfinished and under continued
@@ -20,7 +21,8 @@ This repository only holds **downloadable builds**. Grab the latest version from
 | --- | --- | --- |
 | Android 7.0 or newer | `JellyfinMusic-x.y.z-release.apk` | Download on the phone and open it; allow installs from your browser if asked. |
 | macOS 12 or newer (Intel and Apple silicon) | `JellyfinMusic-x.y.z-macos.zip` | Unzip and move *Jellyfin Music.app* to Applications. The first launch is blocked by macOS because the app is not notarised: see [Opening on macOS](#opening-on-macos) below (one time, about 30 seconds). |
-| Web | `jellyfin-music-web.zip` | Unzip onto any static web host and open the URL. It must be served over HTTP, not opened as a file. |
+| iPhone and iPad | web app (nothing to download), or `JellyfinMusic-x.y.z-unsigned.ipa` for sideloaders when attached to a release | Easiest: open the hosted web version in **Safari**, tap **Share → Add to Home Screen**, then launch it from the Home Screen. If you sideload, install the unsigned `.ipa` with [AltStore](https://altstore.io) or [Sideloadly](https://sideloadly.io): they sign it with your Apple ID and install it over USB or Wi‑Fi. With a free Apple ID the certificate lasts 7 days (the tool renews it while your computer is reachable) and three sideloaded apps are allowed at a time; a paid developer account signs for a year. The `.ipa` cannot be installed by opening it directly. |
+| Web | `jellyfin-music-web.zip` | Unzip onto HTTPS web hosting at the root of a domain or subdomain (the bundle is built for base href `/`) and open the address. Your Jellyfin server must be reachable over HTTPS, otherwise the browser blocks the connection. The web version streams only, no downloads. Hosting guide: [web-hosting.md](web-hosting.md). |
 
 ## Opening on macOS
 
@@ -57,10 +59,18 @@ Type `demo` as the server to explore the app with a built-in sample library.
 - Full-screen player with synced lyrics, an up-next queue you can reorder, shuffle and repeat
 - Gapless playback and optional crossfade
 - Lock-screen / notification controls and headset buttons
-- Download albums and playlists for offline listening (Android and macOS)
+- Download albums and playlists for offline listening (Android and macOS); on Android you can
+  keep downloads on an SD card or USB drive when the device has one (Settings → Storage)
 - Play on other Jellyfin devices in your home
 - Light and dark themes, tinted from the album you are playing
 - On a desktop-sized window: sidebar navigation, a player bar and a Now Playing side panel
+
+## Downloads on an SD card (Android)
+
+If your phone or tablet has an SD card or a USB drive, **Settings → Storage** lets you choose
+where new downloads are saved (the option only appears when such storage exists). You can move
+existing downloads to the new location; songs on a card that is out of the device show as
+unavailable until you put it back, re-download them or remove them.
 
 ## Privacy
 
