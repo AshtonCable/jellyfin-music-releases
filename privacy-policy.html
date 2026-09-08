@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jellyfin Music — Privacy Policy</title>
+<meta name="description" content="Privacy policy for Jellyfin Music, a client app for self-hosted Jellyfin servers. The developer collects no personal data.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #F2F2F7; --card: #FFFFFF; --text: #000000; --muted: rgba(60,60,67,.6);
+    --rule: rgba(60,60,67,.29); --accent: #007AFF; --brand-a: #AA5CC3; --brand-b: #00A4DC;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #000000; --card: #1C1C1E; --text: #FFFFFF; --muted: rgba(235,235,245,.6); --rule: rgba(84,84,88,.6); --accent: #0A84FF; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 720px; margin: 0 auto; padding: 48px 24px 72px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 8px; }
+  .mark {
+    width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--brand-a), var(--brand-b));
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 30px; line-height: 1;
+    box-shadow: 0 8px 20px rgba(0,164,220,.25);
+  }
+  h1 { font-size: 30px; line-height: 1.15; margin: 0; letter-spacing: .2px; }
+  h1 small { display: block; font-size: 15px; font-weight: 500; color: var(--muted); margin-top: 4px; }
+  .meta { color: var(--muted); font-size: 15px; margin: 18px 0 32px; }
+  .meta a { color: var(--accent); text-decoration: none; }
+  h2 { font-size: 22px; margin: 36px 0 10px; letter-spacing: .2px; }
+  h3 { font-size: 17px; margin: 28px 0 8px; }
+  p, li { margin: 0 0 12px; }
+  ul { padding-left: 22px; }
+  li { margin-bottom: 8px; }
+  a { color: var(--accent); }
+  .summary {
+    background: var(--card); border-radius: 14px; padding: 18px 20px 8px;
+    box-shadow: 0 1px 0 var(--rule);
+  }
+  .summary ul { margin: 0; }
+  code { font: 15px ui-monospace, SFMono-Regular, Menlo, monospace; background: rgba(120,120,128,.16); padding: 1px 6px; border-radius: 6px; }
+  hr { border: 0; border-top: .5px solid var(--rule); margin: 40px 0 28px; }
+  .store { color: var(--muted); font-size: 15px; }
+  .store h3 { color: var(--text); }
+  footer { margin-top: 48px; font-size: 13px; color: var(--muted); }
+  @media print {
+    body { background: #fff; color: #000; font-size: 11.5pt; }
+    main { max-width: none; padding: 0; }
+    .summary { box-shadow: none; border: .5pt solid #bbb; background: #fff; }
+    a { color: #000; text-decoration: none; }
+    .mark { box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h2 { page-break-after: avoid; }
+    p, li { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="mark" aria-hidden="true">♪</div>
+    <h1>Jellyfin Music<small>Privacy Policy</small></h1>
+  </header>
+  <p class="meta"><strong>Effective date:</strong> September 8, 2026 &nbsp;·&nbsp; <strong>Developer:</strong> Ashton Cable, <a href="https://ashtoncable.ca">ashtoncable.ca</a></p>
+
+  <section class="summary" aria-label="Summary">
+    <ul>
+      <li>Jellyfin Music does <strong>not</strong> collect, store, sell or share any personal data. There are no analytics, no advertising, no tracking and no developer accounts.</li>
+      <li>The app is only a <strong>client</strong>. Your music, listening history and account belong to the Jellyfin server you connect to, which you (or someone you trust) run yourself. The developer has no access to that server or anything on it.</li>
+      <li>Everything the app keeps is stored <strong>on your device</strong> and can be removed by signing out, deleting downloads or uninstalling the app.</li>
+    </ul>
+  </section>
+
+  <h2>What the app stores on your device</h2>
+  <p>To work as a music player the app keeps the following on your device only:</p>
+  <ul>
+    <li><strong>Server connection details</strong> – the address of your Jellyfin server, your username, and the session token your server issues when you sign in, so you stay signed in. Your password is used once to sign in and is not stored.</li>
+    <li><strong>A device identifier</strong> – a random string the app generates the first time it runs. Jellyfin requires clients to identify themselves with a device ID; it is not derived from your hardware and is never sent anywhere but your own server.</li>
+    <li><strong>Preferences</strong> – appearance, playback and download settings, and whether you have seen the welcome tour.</li>
+    <li><strong>Downloads</strong> – music files and cover images you choose to download for offline listening.</li>
+  </ul>
+  <p>On Android, iOS and macOS this data lives in the app's private storage. On the web it lives in your browser's local storage for the site that hosts the app. Signing out removes the session token; deleting a download removes its files; uninstalling the app (or clearing site data in the browser) removes everything.</p>
+
+  <h2>What the app sends to your Jellyfin server</h2>
+  <p>Jellyfin Music talks only to the server address you enter. Like any Jellyfin client it sends your sign-in details, requests for your library, search terms, the tracks you play and how far you have listened (Jellyfin's playback reporting, which powers "resume" and play counts on your server), download requests, and, if you use the Play On feature, remote-control commands for other Jellyfin devices on your account.</p>
+  <p>This traffic goes directly between your device and your server; the developer never sees it. Whoever operates the server controls that data. If the server is not your own, refer to its operator's privacy practices.</p>
+
+  <h2>Optional third-party service: lyrics</h2>
+  <p>When your server has no lyrics for a song and <strong>Online Lyrics</strong> is switched on (it is on by default), the app asks <a href="https://lrclib.net">LRCLIB</a>, a free community lyrics database, for lyrics. Only the song's title, artist, album name and length are sent — no account details, identifiers or listening history. As with any internet request, LRCLIB's servers can see your IP address. You can turn this off at any time in <strong>Settings → Playback → Online Lyrics</strong>, after which the app makes no requests to anyone other than your Jellyfin server.</p>
+  <p>The built-in <strong>demo library</strong> (reached by entering <code>demo</code> as the server) loads sample cover images from the placeholder image service picsum.photos. No personal data is sent with those requests.</p>
+
+  <h2>Permissions</h2>
+  <p>The app asks only for what playback needs: network access (to reach your server), the ability to keep playing in the background with a media notification / lock-screen controls, and permission to keep the device awake while playing. It does not request access to your location, contacts, camera, microphone, photos or files outside its own storage.</p>
+
+  <h2>Children</h2>
+  <p>Jellyfin Music is not directed at children under 13 and, as described above, does not collect personal information from anyone.</p>
+
+  <h2>Security</h2>
+  <p>Session tokens are kept in the app's private storage. Connections to your server use HTTPS when your server is configured for it; the developer recommends HTTPS whenever a server is reachable from outside your home network. Because no data is collected by the developer, there is no developer-side data to breach.</p>
+
+  <h2>Your choices and rights</h2>
+  <p>Because the developer holds no data about you, there is nothing for the developer to access, correct or delete. Data held by your Jellyfin server is managed through the server itself. On your device you can sign out, delete downloads or uninstall the app at any time.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the app's behaviour changes in a way that affects privacy, this document will be updated and the effective date revised. The current version is always published alongside the app's releases.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="https://ashtoncable.ca">ashtoncable.ca</a>, or open an issue on the <a href="https://github.com/AshtonCable/jellyfin-music-releases">jellyfin-music-releases</a> repository.</p>
+
+  <hr>
+  <section class="store">
+    <h3>Notes for app-store forms</h3>
+    <ul>
+      <li><strong>Google Play Data safety:</strong> the developer collects no user data and shares no user data. Sign-in credentials and the session token are stored on-device only and are sent solely to the user's own server. The optional lyrics lookup sends non-personal song metadata (title, artist, album, duration) to LRCLIB and can be disabled by the user.</li>
+      <li><strong>Apple App Privacy:</strong> "Data Not Collected". The app contains no third-party analytics or advertising SDKs and does not track users.</li>
+      <li>This document describes the app's behaviour as built; it is not legal advice.</li>
+    </ul>
+  </section>
+
+  <footer>© 2026 Ashton Cable · Jellyfin Music is an independent client and is not affiliated with the Jellyfin project.</footer>
+</main>
+</body>
+</html>

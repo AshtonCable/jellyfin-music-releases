@@ -38,6 +38,12 @@ your device. When your server has no lyrics for a song, the song's title, artist
 length are sent to [LRCLIB](https://lrclib.net) to look them up; you can turn this off in
 Settings → Playback → Online Lyrics. Nothing else leaves your device.
 
+## Privacy
+
+Jellyfin Music collects no personal data; everything stays on your device and your own
+Jellyfin server. The full policy is in [PRIVACY.md](PRIVACY.md), also available as
+[HTML](privacy-policy.html) and [PDF](privacy-policy.pdf).
+
 ## Feedback
 
 Problems or ideas? Open an issue on this repository.
