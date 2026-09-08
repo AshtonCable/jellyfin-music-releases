@@ -19,8 +19,33 @@ This repository only holds **downloadable builds**. Grab the latest version from
 | Platform | File | How |
 | --- | --- | --- |
 | Android 7.0 or newer | `JellyfinMusic-x.y.z-release.apk` | Download on the phone and open it; allow installs from your browser if asked. |
-| macOS 12 or newer (Intel and Apple silicon) | `JellyfinMusic-x.y.z-macos.zip` | Unzip, move *Jellyfin Music.app* to Applications, then right-click → Open the first time (the app is not notarised yet). |
+| macOS 12 or newer (Intel and Apple silicon) | `JellyfinMusic-x.y.z-macos.zip` | Unzip and move *Jellyfin Music.app* to Applications. The first launch is blocked by macOS because the app is not notarised: see [Opening on macOS](#opening-on-macos) below (one time, about 30 seconds). |
 | Web | `jellyfin-music-web.zip` | Unzip onto any static web host and open the URL. It must be served over HTTP, not opened as a file. |
+
+## Opening on macOS
+
+Apple only lets apps open without a warning when their developer pays for an Apple Developer
+account and notarises every build. Jellyfin Music is signed but not notarised, so macOS blocks
+it the first time you open it. You only have to do this once per version; after that it opens
+like any other app.
+
+**macOS 15 Sequoia and macOS 26**
+
+1. Double-click *Jellyfin Music.app*. A message says *"Apple could not verify 'Jellyfin Music'
+   is free of malware…"*. Click **Done** (not *Move to Trash*).
+2. Open **System Settings → Privacy & Security** and scroll down to the **Security** section.
+3. You will see *"Jellyfin Music" was blocked to protect your Mac.* Click **Open Anyway**.
+4. Confirm with **Open Anyway** in the dialog that follows and enter your password or use
+   Touch ID if asked.
+
+**macOS 12, 13 and 14**
+
+Right-click (or Control-click) *Jellyfin Music.app* and choose **Open**, then click **Open** in
+the dialog. If that does not offer an Open button, use the System Settings steps above.
+
+If macOS says the app is "damaged", the download was quarantined by the browser. Run
+`xattr -dr com.apple.quarantine "/Applications/Jellyfin Music.app"` in Terminal and open it
+again. The same steps are in the `READ ME FIRST` file inside the zip.
 
 Sign in with your server address (for a home server that is usually something like
 `http://192.168.1.20:8096`), your Jellyfin username and password, or use Quick Connect.
@@ -39,17 +64,15 @@ Type `demo` as the server to explore the app with a built-in sample library.
 
 ## Privacy
 
-The app talks to the Jellyfin server you sign in to and stores your sign-in token only on
-your device. When your server has no lyrics for a song, the song's title, artist, album and
-length are sent to [LRCLIB](https://lrclib.net) to look them up; you can turn this off in
-Settings → Playback → Online Lyrics. Nothing else leaves your device.
+Jellyfin Music collects no personal data. The app talks only to the Jellyfin server you sign
+in to and stores your sign-in token on your device. When your server has no lyrics for a song,
+the song's title, artist, album and length are sent to [LRCLIB](https://lrclib.net) to look
+them up; you can turn this off in Settings → Playback → Online Lyrics. Nothing else leaves your
+device. The full policy is published at
+[ashtoncable.github.io/jellyfin-music-releases/privacy-policy.html](https://ashtoncable.github.io/jellyfin-music-releases/privacy-policy.html)
+and kept here as [PRIVACY.md](PRIVACY.md), [HTML](privacy-policy.html) and [PDF](privacy-policy.pdf).
 
-## Privacy
+## Support and feedback
 
-Jellyfin Music collects no personal data; everything stays on your device and your own
-Jellyfin server. The full policy is in [PRIVACY.md](PRIVACY.md), also available as
-[HTML](privacy-policy.html) and [PDF](privacy-policy.pdf).
-
-## Feedback
-
-Problems or ideas? Open an issue on this repository.
+Problems or ideas? Open an issue on this repository or email
+[ashton@ashtoncable.ca](mailto:ashton@ashtoncable.ca).
