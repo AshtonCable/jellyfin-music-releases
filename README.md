@@ -21,7 +21,7 @@ This repository only holds **downloadable builds**. Grab the latest version from
 | --- | --- | --- |
 | Android 7.0 or newer | `JellyfinMusic-x.y.z-release.apk` | Download on the phone and open it; allow installs from your browser if asked. |
 | macOS 12 or newer (Intel and Apple silicon) | `JellyfinMusic-x.y.z-macos.zip` | Unzip and move *Jellyfin Music.app* to Applications. The first launch is blocked by macOS because the app is not notarised: see [Opening on macOS](#opening-on-macos) below (one time, about 30 seconds). |
-| iPhone and iPad | web app (nothing to download), or `JellyfinMusic-x.y.z-unsigned.ipa` for sideloaders when attached to a release | Easiest: open the hosted web version in **Safari**, tap **Share → Add to Home Screen**, then launch it from the Home Screen. If you sideload, install the unsigned `.ipa` with [AltStore](https://altstore.io) or [Sideloadly](https://sideloadly.io): they sign it with your Apple ID and install it over USB or Wi‑Fi. With a free Apple ID the certificate lasts 7 days (the tool renews it while your computer is reachable) and three sideloaded apps are allowed at a time; a paid developer account signs for a year. The `.ipa` cannot be installed by opening it directly. |
+| iPhone and iPad | web app (nothing to download) | Open the hosted web version in **Safari**, tap **Share → Add to Home Screen**, then launch it from the Home Screen. There is **no `.ipa` in the releases** at the moment. See [iPhone and iPad](#iphone-and-ipad) below. |
 | Web | `jellyfin-music-web.zip` | Unzip onto HTTPS web hosting at the root of a domain or subdomain (the bundle is built for base href `/`) and open the address. Your Jellyfin server must be reachable over HTTPS, otherwise the browser blocks the connection. The web version streams only, no downloads. Hosting guide: [web-hosting.md](web-hosting.md). |
 
 ## Opening on macOS
@@ -64,6 +64,26 @@ Type `demo` as the server to explore the app with a built-in sample library.
 - Play on other Jellyfin devices in your home
 - Light and dark themes, tinted from the album you are playing
 - On a desktop-sized window: sidebar navigation, a player bar and a Now Playing side panel
+
+## iPhone and iPad
+
+The way to run Jellyfin Music on an iPhone or iPad today is the **web app**:
+open the hosted web version in Safari, tap **Share → Add to Home Screen**, and
+launch it from the Home Screen. It runs full screen with its own icon, keeps
+you signed in, and shows Now Playing on the Lock Screen.
+
+**No `.ipa` is published.** Building one needs a Mac with Apple's iOS platform
+tools installed, and installing one needs a signing tool such as AltStore or
+Sideloadly plus your own Apple ID. If an unsigned `.ipa` is added to a future
+release, it will be listed in the table above.
+
+> [!NOTE]
+> **iOS has not been tested on a real device.** There is no iPhone or iPad
+> available to test on, only the simulator on a Mac, so anything specific to
+> real hardware — background audio, Lock Screen controls, the local-network
+> permission prompt, audio interruptions from calls — is untested and may not
+> work. The web app is the supported route on iOS; treat native iOS as
+> experimental.
 
 ## Downloads on an SD card (Android)
 

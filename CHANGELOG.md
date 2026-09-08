@@ -35,7 +35,9 @@ features may not work as expected yet.
   with the first-launch steps for macOS 15 and 26 (System Settings → Privacy
   & Security → Open Anyway), replacing the outdated right-click → Open advice
 - iOS: build tooling for an unsigned .ipa (`tool/build_ios_unsigned.sh`),
-  a branded launch screen and the local-network permission text
+  a branded launch screen and the local-network permission text. Untested on
+  real hardware (Simulator only), so iOS stays experimental and the web app
+  is the supported route on iPhone and iPad
 - Privacy policy: notes on the web version's fallback fonts, downloads kept
   on removable storage, and the developer contact for store listings
 
