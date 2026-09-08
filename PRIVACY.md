@@ -1,7 +1,7 @@
 # Jellyfin Music — Privacy Policy
 
 **Effective date:** September 8, 2026
-**Developer:** Ashton Cable · [ashtoncable.ca](https://ashtoncable.ca)
+**Developer:** Ashton Cable · [ashtoncable.ca](https://ashtoncable.ca) · [ashton@ashtoncable.ca](mailto:ashton@ashtoncable.ca)
 
 ## The short version
 
@@ -54,7 +54,7 @@ If the app's behaviour changes in a way that affects privacy, this document will
 
 ## Contact
 
-Questions about this policy: [ashtoncable.ca](https://ashtoncable.ca), or open an issue on the [jellyfin-music-releases](https://github.com/AshtonCable/jellyfin-music-releases) repository.
+Questions about this policy or anything else important: email [ashton@ashtoncable.ca](mailto:ashton@ashtoncable.ca), visit [ashtoncable.ca](https://ashtoncable.ca), or open an issue on the [jellyfin-music-releases](https://github.com/AshtonCable/jellyfin-music-releases) repository. The current version of this policy is published at <https://ashtoncable.github.io/jellyfin-music-releases/privacy-policy.html>.
 
 ---
 
