@@ -17,7 +17,20 @@ features may not work as expected yet.
   hosting kit: `tool/build_web.sh`, an Apache `.htaccess` and
   `docs/web-hosting.md`. The web version streams only; downloads stay in the
   Android and macOS apps
-- Settings → About: Support email and Privacy Policy rows
+- Clear loading, empty and error states everywhere, with a Retry button
+  instead of a blank page or a false "nothing here", and pull-to-refresh on
+  the library lists
+- Keyboard control on desktop and in the browser: Space to play or pause,
+  Escape to close, arrows to seek and change the volume, Cmd or Ctrl with the
+  arrows to change track, Cmd or Ctrl+F to search
+- Long press or right click a song for Play Next, Add to Queue, Go to Album
+  and Go to Artist; a sleep timer; and removing a download now asks first
+- Screen-reader labels and larger touch targets on the player controls,
+  readable tab labels, and support for large system text
+- Signing out asks for confirmation, and an expired session returns you to
+  sign-in with an explanation instead of a wrong password message
+- Downloaded music can be browsed and played with the server unreachable
+- Settings → About: Support email, Privacy Policy and Check for Updates rows
 - macOS: the download zip now includes "READ ME FIRST - Opening on macOS.txt"
   with the first-launch steps for macOS 15 and 26 (System Settings → Privacy
   & Security → Open Anyway), replacing the outdated right-click → Open advice
