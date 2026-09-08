@@ -21,7 +21,7 @@ This repository only holds **downloadable builds**. Grab the latest version from
 | --- | --- | --- |
 | Android 7.0 or newer | `JellyfinMusic-x.y.z-release.apk` | Download on the phone and open it; allow installs from your browser if asked. |
 | macOS 12 or newer (Intel and Apple silicon) | `JellyfinMusic-x.y.z-macos.zip` | Unzip and move *Jellyfin Music.app* to Applications. The first launch is blocked by macOS because the app is not notarised: see [Opening on macOS](#opening-on-macos) below (one time, about 30 seconds). |
-| iPhone and iPad | web app (nothing to download) | Open the hosted web version in **Safari**, tap **Share → Add to Home Screen**, then launch it from the Home Screen. There is **no `.ipa` in the releases** at the moment. See [iPhone and iPad](#iphone-and-ipad) below. |
+| iPhone and iPad | web app (nothing to download), or `JellyfinMusic-x.y.z-unsigned.ipa` | Easiest: open the hosted web version in **Safari**, tap **Share → Add to Home Screen**. The unsigned `.ipa` is for people who already sideload; it is **untested on real hardware**. See [iPhone and iPad](#iphone-and-ipad) below. |
 | Web | `jellyfin-music-web.zip` | Unzip onto HTTPS web hosting at the root of a domain or subdomain (the bundle is built for base href `/`) and open the address. Your Jellyfin server must be reachable over HTTPS, otherwise the browser blocks the connection. The web version streams only, no downloads. Hosting guide: [web-hosting.md](web-hosting.md). |
 
 ## Opening on macOS
@@ -72,18 +72,26 @@ open the hosted web version in Safari, tap **Share → Add to Home Screen**, and
 launch it from the Home Screen. It runs full screen with its own icon, keeps
 you signed in, and shows Now Playing on the Lock Screen.
 
-**No `.ipa` is published.** Building one needs a Mac with Apple's iOS platform
-tools installed, and installing one needs a signing tool such as AltStore or
-Sideloadly plus your own Apple ID. If an unsigned `.ipa` is added to a future
-release, it will be listed in the table above.
+### Sideloading the unsigned .ipa
 
-> [!NOTE]
-> **iOS has not been tested on a real device.** There is no iPhone or iPad
-> available to test on, only the simulator on a Mac, so anything specific to
-> real hardware — background audio, Lock Screen controls, the local-network
-> permission prompt, audio interruptions from calls — is untested and may not
-> work. The web app is the supported route on iOS; treat native iOS as
-> experimental.
+An unsigned `JellyfinMusic-x.y.z-unsigned.ipa` is attached to the release for
+people who already sideload apps. It **cannot** be installed by opening it
+directly: iOS only runs signed apps, so you sign it yourself with
+[AltStore](https://altstore.io) or [Sideloadly](https://sideloadly.io), which
+use your own Apple ID and install it over USB or Wi‑Fi. With a free Apple ID
+the signature lasts 7 days (those tools re-sign it while your computer is
+reachable) and you may have three sideloaded apps at a time; a paid Apple
+Developer account signs for a year. You can also open the project in Xcode,
+pick your own team under Signing & Capabilities and run it on your device.
+
+> [!WARNING]
+> **The iOS build has never run on a real iPhone or iPad.** It is built and
+> checked on the Mac Simulator only, because no device is available to test
+> on. Everything specific to real hardware — background audio, Lock Screen
+> and Control Centre controls, the local-network permission prompt, audio
+> interruptions from calls, Bluetooth and CarPlay — is unverified and may
+> simply not work. The web app is the supported route on iOS; treat the
+> `.ipa` as experimental.
 
 ## Downloads on an SD card (Android)
 
